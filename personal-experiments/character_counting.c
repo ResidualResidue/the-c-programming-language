@@ -1,26 +1,45 @@
 #include <stdio.h>
+int while_method(int);
+int for_method(int);
+int count_lines();
 
 int main(){
-    
-    // Just some size experiments
-    long nc;
-    int nc1;
-    long long nc2;
 
-    /* 
-        Add these to the mystery listery. Why are they 0.000000?
-    */
-    double nc3;
-    float nc4;
-    printf("SIZES");
-    printf("long: %ld int: %d long long: %lld double: %lf float: %f\n", sizeof(nc), sizeof(nc1), sizeof(nc2), sizeof(nc3), sizeof(nc4));
-
-    nc = 0;
-
-    while(getchar() != EOF)
-        ++nc;
-
-    printf("Char count: %ld\n", nc);
+    int lc;
+    lc = count_lines();
+    printf("%d\n", lc);
     
     return 0;
+}
+
+/*
+    1.5.2 Counting Characters
+*/
+int while_method(int nc){
+    nc = 0;
+    while(getchar() != EOF)
+        ++nc; // nc++ and ++nc are different in there value as expressions.
+    return nc;
+}
+
+int for_method(int nc){
+    for(nc=0; getchar() != EOF; nc++)
+        ;
+    return nc;
+}
+
+
+/*
+    1.5.3 Counting Lines
+*/
+
+int count_lines(){
+    int lc;
+    short c;
+    lc = 1;
+
+    while((c = getchar()) != EOF)
+        if(c == '\n')
+            lc++;
+    return lc;
 }
