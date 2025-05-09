@@ -9,6 +9,10 @@
 // Define expression
 #define INCREASE_STEP(i) (i+=STEP)
 
+//Does NOT work
+//#define INCREASE_STEP(i) (i+=STEP;i+=1;)
+
+
 int main(){
     int i;
     for(i=LOWER; i<=UPPER;INCREASE_STEP(i)){
