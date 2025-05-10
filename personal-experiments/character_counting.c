@@ -2,12 +2,16 @@
 int while_method(int);
 int for_method(int);
 int count_lines();
+int count_words();
+
+#define IN_WORD 0
+#define OUT_WORD 1
 
 int main(){
 
-    int lc;
-    lc = count_lines();
-    printf("%d\n", lc);
+    int wc = 0;
+    wc = count_words();
+    printf("%d\n", wc);
     
     return 0;
 }
@@ -42,4 +46,26 @@ int count_lines(){
         if(c == '\n')
             lc++;
     return lc;
+}
+
+/*
+    1.5.4 Word Counting
+*/
+
+int count_words(){
+    short wc, c, state;
+    wc = 0; state = OUT_WORD;
+
+    while((c = getchar()) != EOF){
+        if(c == ' ' || c == '\n' || c == '\t'){
+            state = OUT_WORD;
+        }else{
+            if(state == OUT_WORD){
+                wc++;
+                state = IN_WORD;
+            }
+        }
+    }
+    return wc;
+
 }
