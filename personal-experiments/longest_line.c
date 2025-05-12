@@ -37,7 +37,7 @@ int get_line(char* current_line, int limit){
         current_line[i] = '\n';
         i++;
     }
-    current_line[i]='\0';
+    current_line[i]='\0'; // Null character, equal to 0. Marks end of string. All strings must take into account the 1 extra null character.
     return i;
 
 }
