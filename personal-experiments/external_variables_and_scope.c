@@ -2,12 +2,10 @@
 void foo();
 
 // External variable common to all functions.
-int e;
+int e = 314159;
 
 int main(){
     int c = 10;
-    extern int e; // Function must define it. Can explicitly call it extern, or implicitly based on context.
-    e=314159;
     printf("%d\n", c);
     printf("External var from main, before foo: %d\n", e);
 
