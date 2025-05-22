@@ -45,5 +45,36 @@ int main(){
 
     printf("%lu\n", strlen("asdasdasd")); // Returns length of string minus null.
 
+    /*
+    Multiline strings if need be.
+    */
+    char broke[] = "asdasd f "
+    "vvvvv";
+
+    printf("%s\n", broke);
+
+    /*
+        Enums
+
+        Names in different enumerations MUST BE DISTINCT.
+        Values in the same enumeration do NOT need to be distinct.
+
+        Compilers dont NEED to validate and check values, but they could and that's a leg up on #define.
+        Plus they're a little more structured and logically compartmentalized.
+    */
+
+    enum boolean {NO, YES, MAYBE}; // NO = 0, YES = 1, MAYBE = 2.
+    enum escapes {BELL='\a', BACKSPACE='\b', TAB='\t'}; // Can specify explicit values.
+    enum months {JAN=1, FEB, MAR, APR}; // Can specify implicit values
+
+    printf("%d\n", NO);
+    printf("%c\n", BACKSPACE);
+    printf("%d\n", JAN);
+
+
+    // Constants / finals.w
+    const int constant_val = 0;
+    constant_val++;
+
     return 0;
 }
