@@ -25,9 +25,20 @@ int main(){
             }
         <<: Stream insertion operator (also called “put to” operator). Inserts characters into an output stream.
     */
+    const double pi = 3.14159;
+    // pi = 5; // Now we can't do this!
     display_externs();
     std::cout << "Hello, world! Time to swap those two numbers!\n";
     swap();
     display_externs();
+    
+    /*
+        Math is very similar as in C.
+     */
+    
+    
+    
     return 0;
+
+
 }
