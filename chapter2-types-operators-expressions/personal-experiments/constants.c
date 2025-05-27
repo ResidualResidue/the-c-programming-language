@@ -13,6 +13,7 @@ int main(){
     long x;
     unsigned int y;
     double f;
+    const char constant_string[] = "test";
     x = 0;
     x += 1234; // Integer constants written like so.
     x += 1234L; //long constatns written with a terminal L.
@@ -74,7 +75,10 @@ int main(){
 
     // Constants / finals.w
     const int constant_val = 0;
-    constant_val++;
+    // constant_val++; // cannot do this.
+
+    printf("Constant str: %s\n", constant_string);
+    // constant_string[0] = 'b'; // Cannot do.
 
     return 0;
 }
