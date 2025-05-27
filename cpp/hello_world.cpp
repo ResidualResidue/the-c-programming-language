@@ -1,5 +1,20 @@
 #include <iostream> // File in the standard library
 
+int a = 1;
+int b = 2;
+
+void swap(){
+    extern int a, b;
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+void display_externs(){
+    extern int a, b;
+    std::cout << a <<  "||" << b << " yay!\n";
+}
+
 int main(){
     /*
         std: Namespace qualifier. Prevents naming collisions.
@@ -10,6 +25,9 @@ int main(){
             }
         <<: Stream insertion operator (also called “put to” operator). Inserts characters into an output stream.
     */
-    std::cout << "Hello, world!" << std:: ;
+    display_externs();
+    std::cout << "Hello, world! Time to swap those two numbers!\n";
+    swap();
+    display_externs();
     return 0;
 }
