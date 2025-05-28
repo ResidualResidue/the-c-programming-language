@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-struct my_struct{
+typedef struct {
     int a;
-    char b[10];
-};
+    char b[50];
+} my_struct;
 
 int main(){
     
@@ -26,7 +26,7 @@ int main(){
         putchar(c);
 
 
-    struct my_struct a, b;
+    my_struct a, b;
 
     a.a=10;
     strcpy(a.b, "Structs");
@@ -34,9 +34,22 @@ int main(){
 
     printf("Struct a: a=%d, b=%s\n", a.a, a.b);
 
-    memcpy(&b, &a, sizeof(struct my_struct));
+    memcpy(&b, &a, sizeof(my_struct));
     printf("Struct b: a=%d, b=%s\n", b.a, b.b);
 
+    my_struct d = {100, "BAHH"}; // Alternative initialization syntax
+
+    printf("Struct d: a=%d, b=%s\n", d.a, d.b);
+
+    my_struct e = { // Yet another alternative initialization syntax.
+        .b = "Okane kasegu",
+        .a = 1000000
+    };
+    d = e; // Struct assignment is inituitive; Basically a memcpy under the hood.
+    printf("Struct d: a=%d, b=%s\n", d.a, d.b);
+
+
+    printf("Struct e: a=%d, b=%s\n", e.a, e.b);
 
     return 0;
 }
