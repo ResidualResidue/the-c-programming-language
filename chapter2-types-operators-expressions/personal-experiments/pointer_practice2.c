@@ -33,8 +33,8 @@ int main(){
 void set_points(point *points, int length){
     int i;
     for(i=0; i < length; i++){
-        (*(points + i)).x = i;
-        (*(points + i)).y = length - i;
+        points[i].x = i;
+        points[i].y = length - i;
     }
 }
 
